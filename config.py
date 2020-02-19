@@ -6,7 +6,7 @@ load_dotenv(os.path.join(basedir, '.env'))
 
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
-    SQLALCHEMY_DATABASE_URI = 'postgres://cuxnartiqvpyxw:f80e32dd8edf47b904ce6e6fbaca36a1ef4eb416a6c97c30f1ef2bfae63f8dd8@ec2-3-91-112-166.compute-1.amazonaws.com:5432/d9noi2kuo89i2r'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
     MAIL_SERVER = os.environ.get('MAIL_SERVER')
